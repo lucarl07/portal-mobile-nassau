@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useSQLiteContext } from "expo-sqlite";
+import { useRouter } from "expo-router";
+import * as SecureStore from 'expo-secure-store';
 import * as Crypto from 'expo-crypto';
+
+async function setUserAuthStatus(value: boolean) {
+  await SecureStore.setItemAsync("is_user_logged", String(value));
+}
 
 export default function Login() {
     const [form, setForm] = useState({
@@ -10,6 +16,7 @@ export default function Login() {
     });
 
     const db = useSQLiteContext();
+	const router = useRouter();
 
     const hashPassword = async (password: string) => {
         const hashed = await Crypto.digestStringAsync(
@@ -76,6 +83,9 @@ export default function Login() {
 
             Alert.alert('Success', 'User logged in successfully');
             setForm({ email: '', password: '' });
+
+			await setUserAuthStatus(true)
+			router.replace('/(tabs)')
         } catch (error: any) {
             console.error(error);
             Alert.alert('Error', error.message || 'An error occurred while logging in.');

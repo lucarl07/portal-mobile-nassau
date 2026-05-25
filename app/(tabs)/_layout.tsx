@@ -1,11 +1,10 @@
 import { Tabs, Redirect } from 'expo-router';
-// import { useAuth } from '@/hooks/useAuth';
+import * as SecureStore from 'expo-secure-store';
 
 export default function TabsLayout() {
-  // const { isAuthenticated } = useAuth();
-  const isAuthenticated = false;
+  const isAuthenticated = SecureStore.getItem("is_user_logged");
 
-  if (!isAuthenticated) return <Redirect href="/login" />;
+  if (isAuthenticated != "true") return <Redirect href="/login" />;
 
   return <Tabs />;
 }

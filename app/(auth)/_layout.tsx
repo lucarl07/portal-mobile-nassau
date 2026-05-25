@@ -1,12 +1,12 @@
 // app/(auth)/_layout.tsx
 import { Slot, Redirect } from 'expo-router';
-// import { useAuth } from '@/hooks/useAuth';
+import * as SecureStore from 'expo-secure-store';
 
 export default function AuthLayout() {
-  const isAuthenticated = false;
+  const isAuthenticated = SecureStore.getItem("is_user_logged");
 
   // Se já estiver logado, redireciona para a área principal
-  if (isAuthenticated) return <Redirect href="/(tabs)" />;
+  if (isAuthenticated == "true") return <Redirect href="/(tabs)" />;
 
   return <Slot />;
 }
