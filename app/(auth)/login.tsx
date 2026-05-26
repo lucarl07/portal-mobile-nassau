@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { Text, TextInput, Button, StyleSheet, Alert, View, Pressable } from 'react-native';
+
 import { useSQLiteContext } from "expo-sqlite";
 import { useRouter } from "expo-router";
+
 import * as SecureStore from 'expo-secure-store';
 import * as Crypto from 'expo-crypto';
 
@@ -93,45 +95,102 @@ export default function Login() {
     };
 
     return (
-        <View style={styles.container}>
-            <TextInput
-                style={styles.input}
-                placeholder="E-mail"
-                value={form.email}
-                onChangeText={(text) => setForm({ ...form, email: text })}
-                keyboardType="email-address"
-                autoCapitalize="none"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Senha"
-                value={form.password}
-                onChangeText={(text) => setForm({ ...form, password: text })}
-                secureTextEntry
-            />
-            <Button title="Cadastrar usuário" onPress={registerUser} />
-            <Button title="Fazer login" onPress={loginUser} />
+        <View style={styles.pageView}>
+			<View style={styles.contentView}></View>
+			<View style={styles.loginView}>
+				<View style={styles.inputWrapper}>
+					<TextInput
+						style={styles.input}
+						placeholder="E-mail"
+						value={form.email}
+						onChangeText={(text) => setForm({ ...form, email: text })}
+						keyboardType="email-address"
+						autoCapitalize="none"
+					/>
+					<TextInput
+						style={styles.input}
+						placeholder="Senha"
+						value={form.password}
+						onChangeText={(text) => setForm({ ...form, password: text })}
+						secureTextEntry
+					/>
+				</View>
+				<View style={styles.buttonWrapper}>
+					<Pressable style={[styles.button, styles.loginButton]} onPress={loginUser}>
+						<Text style={styles.loginButtonText}>Fazer login</Text>
+					</Pressable>
+					<Pressable style={[styles.button, styles.registerButton]} onPress={registerUser}>
+						<Text style={styles.registerButtonText}>Registrar-se</Text>
+					</Pressable>
+				</View>
+			</View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-        backgroundColor: '#fff',
-        borderRadius: 10,
+    pageView: {
+		flex: 1,
+		justifyContent: 'flex-end',
+		alignItems: 'center',
+		backgroundColor: '#D0D0D0',
+    },
+	contentView: {
+		flex: 7,
+	},
+	loginView: {
+		flex: 3,
+		gap: 24,
+		width: '100%',
+        padding: 32,
+        borderRadius: 24,
+        backgroundColor: '#02295d',
+		
+		// Sombra no Android:
+        elevation: 5,
+		// Sombra no iOS:
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
-    },
+	},
+	inputWrapper: {
+		gap: 12
+	},
     input: {
-        height: 40,
-        borderColor: '#ccc',
+        height: 48,
+		padding: 12,
+		borderRadius: 12,
         borderWidth: 1,
-        marginBottom: 10,
-        paddingHorizontal: 10,
+		color: '#000',
+		backgroundColor: '#FFF',
+        borderColor: '#D0D0D0',
     },
+	buttonWrapper: {
+		flexDirection: 'row',
+		gap: 12,
+	},
+	button: {
+		flex: 1,
+		padding: 16,
+		alignItems: 'center',
+		borderRadius: 12,
+	},
+	loginButton: {
+		backgroundColor: '#efc10a'
+	},
+	registerButton: {
+		backgroundColor: '#35609b'
+	},
+	loginButtonText: {
+		color: '#35609b',
+		fontSize: 16,
+		fontWeight: '800'
+	},
+	registerButtonText: {
+		color: '#efc10a',
+		fontSize: 16,
+		fontWeight: '800'
+	}
 });
 
