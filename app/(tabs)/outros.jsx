@@ -5,6 +5,7 @@ export default function Outros() {
 		<View>
 			{/*  Me substitua pelo seu componente!  */}
 			<Text>Olá mundo!</Text>
+			<Text>Eu sou a página Outros.</Text>
 		</View>
 	)
 }

@@ -5,6 +5,7 @@ export default function Usuario() {
 		<View>
 			{/*  Me substitua pelo seu componente!  */}
 			<Text>Olá mundo!</Text>
+			<Text>Eu sou a página de Usuário.</Text>
 		</View>
 	)
 }
