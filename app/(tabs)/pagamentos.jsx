@@ -3,11 +3,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Pagamentos() {
 	return (
-		
 		<SafeAreaView>
 
 			<View style={styles.View1}>
-
 				<Image source={require('@/assets/images/uninassau_logo.png')} style={styles.logo}/>
 
 				<Text style={styles.Text1}>
@@ -16,7 +14,6 @@ export default function Pagamentos() {
 			</View>
 
 			<View style={styles.pagamentos}>
-
 				<View style={styles.pagamentoPendente}>
 					<Image source={require('@/assets/images/negação.png')} style={styles.ícones}/>
 
@@ -36,7 +33,6 @@ export default function Pagamentos() {
 				</View>
 
 				<View style={styles.pagamentoRealizado}>
-
 					<Image source={require('@/assets/images/afirmação.png')} style={styles.ícones}/>
 
 					<Text style={styles.Text2}>
@@ -52,9 +48,7 @@ export default function Pagamentos() {
 							REALIZADO
 						</Text>
 					</View>
-
 				</View>
-
 			</View>
 
 			<View style={styles.HistóricoPagamentos}>
@@ -62,8 +56,6 @@ export default function Pagamentos() {
 					Histórico de pagamentos:
 				</Text>
 			</View>
-
-			
 
 		</SafeAreaView>
 	)
@@ -73,8 +65,6 @@ const styles = StyleSheet.create({
 
 	View1: {
 		backgroundColor: 'white',
-		borderColor: 'black',
-		borderWidth: 2,
 		width: '99%',
 		height: '13%',
 		borderRadius: 10,
@@ -125,8 +115,6 @@ const styles = StyleSheet.create({
 	pagamentoPendente: {
 		flex: 1,
 		backgroundColor: '#ba0100',
-		borderColor: 'black',
-		borderWidth: 2,
 		borderRadius: 10,
 		padding: 12,
 		elevation: 8,
@@ -139,8 +127,6 @@ const styles = StyleSheet.create({
 	pagamentoRealizado: {
 		flex: 1,
 		backgroundColor: '#00bf63',
-		borderColor: 'black',
-		borderWidth: 2,
 		borderRadius: 10,
 		padding: 12,
 		elevation: 8,
@@ -156,9 +142,7 @@ const styles = StyleSheet.create({
 	},
 
 	indicador: {
-		borderColor: 'black',
 		borderRadius: 15,
-		borderWidth: 1,
 		paddingHorizontal: 8,
 		paddingVertical: 4,
 		alignSelf: 'flex-start',
@@ -167,9 +151,7 @@ const styles = StyleSheet.create({
 	},
 
 	HistóricoPagamentos: {
-		borderColor: 'black',
 		borderRadius: 15,
-		borderWidth: 2,
 		backgroundColor: '#01295d',
 		width: '99%',
 		height: '45%',

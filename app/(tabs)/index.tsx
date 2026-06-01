@@ -69,7 +69,7 @@ export default function Inicio() {
 						</Text>
 					</View>
 					<View style={[styles.card, styles.cardDestaque]}>
-						<Text style={styles.Text2}>
+						<Text style={styles.Text3}>
 							Vazio
 						</Text>
 					</View>
@@ -88,8 +88,6 @@ const header = StyleSheet.create({
 	},
 
     View1: {
-		borderColor: 'black',
-		borderWidth: 2,
 		height: '8%',
 		width: '99%',
 		backgroundColor: 'white',
@@ -100,8 +98,6 @@ const header = StyleSheet.create({
 		marginTop: 16,
 		paddingHorizontal: 12,
 		elevation: 8
-		
-
     },
 
 	TextHeader: {
@@ -130,8 +126,6 @@ const header = StyleSheet.create({
 
 
 	View2: {
-		borderColor: 'black',
-		borderWidth: 2,
 		height: '30%',
 		width: '95%',
 		backgroundColor: 'white',
@@ -153,8 +147,6 @@ const header = StyleSheet.create({
 	},
 
 	comunicados: {
-		borderColor: 'black',
-		borderWidth: 2,
 		flex: 0.9,
 		backgroundColor: 'white',
 		justifyContent: 'flex-start',
@@ -173,8 +165,6 @@ const header = StyleSheet.create({
 	},
 
 	card: {
-		borderColor: 'black',
-		borderWidth: 2,
 		flex: 1,
 		backgroundColor: 'white',
 		justifyContent: 'flex-start',
