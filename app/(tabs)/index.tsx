@@ -28,72 +28,59 @@ export default function Inicio() {
 	}, []);
 
 	return (
-		    <SafeAreaView style={styles.container}>
-			    <View style={styles.View1}>
-					<Image source={require('@/assets/images/uninassau_logo.png')} style={styles.íconeLogo}/>
+		<SafeAreaView style={styles.container}>
 
-					<Text style={styles.TextHeader}> UNINASSAU SYSTEM</Text>
+			<View style={styles.View1}>
+				<Image source={require('@/assets/images/uninassau_logo.png')} style={styles.íconeLogo}/>
 
-					<TouchableOpacity onPress={() => console.log('botão pressionado')}>
-					<Image source={require('@/assets/images/sino.png')} style={styles.íconeSino}/>
-					
-					</TouchableOpacity>
-			    </View>
+				<Text style={styles.TextHeader}> UNINASSAU SYSTEM</Text>
 
-				<View style={styles.View2}>
-					<Image source={imagens[imagemAtual]} style={styles.banner} />
+				<TouchableOpacity onPress={() => console.log('botão pressionado')}>
+				<Image source={require('@/assets/images/sino.png')} style={styles.íconeSino}/>
+				
+				</TouchableOpacity>
+			</View>
+
+			<View style={styles.View2}>
+				<Image source={imagens[imagemAtual]} style={styles.banner} />
+			</View>
+
+			<View style={styles.row}>
+				<View style={[styles.comunicados, styles.cardDestaque]}>
+					<Text style={styles.Text3}>
+						Comunicados:
+					</Text>
 				</View>
 
-				<View style={styles.row}>
-					
-					<View style={[styles.comunicados, styles.cardDestaque]}>
-						<Text style={styles.Text3}>
-							Comunicados:
+				<View style={styles.coluna}>
+					<View style={styles.card}>
+						<Image source={require('@/assets/images/provas.png')} style={styles.ícone}/>
+
+						<Text style={styles.Text2}>
+							Provas
 						</Text>
 					</View>
+					<View style={[styles.card, styles.corAtividades]}>
 
+						<Image source={require('@/assets/images/calendario.png')} style={styles.ícone}/>
 
-					<View style={styles.coluna}>
-						<View style={styles.card}>
-
-							<Image source={require('@/assets/images/provas.png')} style={styles.ícone}/>
-
-							<Text style={styles.Text2}>
-								Provas
-							</Text>
-						</View>
-
-						<View style={[styles.card, styles.corAtividades]}>
-
-							<Image source={require('@/assets/images/calendario.png')} style={styles.ícone}/>
-
-							<Text style={styles.Text2}>
-								Atividades
-							</Text>
-						</View>
-
-						<View style={[styles.card, styles.cardDestaque]}>
-							<Text style={styles.Text2}>
-								Vazio
-							</Text>
-						</View>
-
+						<Text style={styles.Text2}>
+							Atividades
+						</Text>
+					</View>
+					<View style={[styles.card, styles.cardDestaque]}>
+						<Text style={styles.Text2}>
+							Vazio
+						</Text>
+					</View>
 				</View>
+			</View>
 
-
-
-
-				</View>
-				
 		</SafeAreaView>
-
-		
 	)
-
 }
 
 const header = StyleSheet.create({
-
 	container: {
 		flex: 1,
 		alignItems: 'center',
