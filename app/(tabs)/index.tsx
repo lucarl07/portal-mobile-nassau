@@ -63,7 +63,7 @@ export default function Inicio() {
 							</Text>
 						</View>
 
-						<View style={styles.card}>
+						<View style={[styles.card, styles.corAtividades]}>
 
 							<Image source={require('@/assets/images/calendario.png')} style={styles.ícone}/>
 
@@ -120,7 +120,7 @@ const header = StyleSheet.create({
 	TextHeader: {
 		fontSize: 18,
 		fontWeight: 'bold',
-		color: '#101ed7',
+		color: '#01295d',
 		fontFamily: 'Calibri',
 		textShadowColor: 'rgba(0, 0, 0 , 0.4)',
 		textShadowOffset: {width: 2, height: 2},
@@ -137,7 +137,7 @@ const header = StyleSheet.create({
 	Text3: {
 		fontSize: 20,
 		fontWeight: 'bold',
-		color: '#ffff0a',
+		color: '#b6a22d',
 		fontFamily: 'Calibri'
 	},
 
@@ -207,7 +207,7 @@ const header = StyleSheet.create({
 	},
 
 	cardDestaque: {
-		backgroundColor: '#4169E1'
+		backgroundColor: '#01295d'
 	},
 
 	íconeSino: {
@@ -227,6 +227,10 @@ const header = StyleSheet.create({
 		height: '100%',
 		borderRadius: 10,
 		resizeMode: 'cover'
+	},
+
+	corAtividades: {
+		backgroundColor: '#efc108'
 	}
 	
 
