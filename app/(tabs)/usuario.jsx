@@ -1,8 +1,26 @@
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { router } from 'expo-router';
+
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useEffect } from 'react';
+
+import getAuthStatus from '@/utils/getAuthStatus';
+import setAuthStatus from '@/utils/setAuthStatus'
 
 export default function Usuario() {
+	const onPressExit = async () => { 
+		await setAuthStatus('false') 
+	}
+
+	useEffect(() => {
+		const isAuthenticated = getAuthStatus()
+
+		if (!isAuthenticated) {
+			router.replace('/login')
+		}
+	}, [])
+
 	return (
 		<ScrollView style={styles.container}>
 			<SafeAreaView style={styles.container}>	
@@ -59,7 +77,7 @@ export default function Usuario() {
 						<MaterialIcons name="chevron-right" size={24} color="#09397d" />
 					</TouchableOpacity>
 
-					<TouchableOpacity style={styles.menuItem}>
+					<TouchableOpacity onPress={onPressExit} style={styles.menuItem}>
 						<MaterialCommunityIcons name="exit-run" size={26} color="#09397d" />
 						<View style={styles.menuTextGroup}>
 							<Text style={styles.menuTitle}>Sair</Text>
