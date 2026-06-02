@@ -1,7 +1,7 @@
 import { Slot } from "expo-router";
 import { SQLiteProvider } from 'expo-sqlite';
 
-const handleDbInit = async (db: any) => {
+const handleDbInit = async (db) => {
     await db.execAsync(`
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

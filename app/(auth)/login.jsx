@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, TextInput, Button, StyleSheet, Alert, View, Pressable } from 'react-native';
+import { Text, TextInput, StyleSheet, Alert, View, Pressable } from 'react-native';
 
 import { useSQLiteContext } from "expo-sqlite";
 import { useRouter } from "expo-router";
@@ -16,7 +16,7 @@ export default function Login() {
     const db = useSQLiteContext();
 	const router = useRouter();
 
-    const hashPassword = async (password: string) => {
+    const hashPassword = async (password) => {
         const hashed = await Crypto.digestStringAsync(
             Crypto.CryptoDigestAlgorithm.SHA256,
             password
@@ -49,7 +49,7 @@ export default function Login() {
 
             Alert.alert('Success', 'User added successfully');
             setForm({ email: '', password: '' });
-        } catch (error: any) {
+        } catch (error) {
             console.error(error);
             Alert.alert('Error', error.message || 'An error occurred while adding the user.');
         }
@@ -72,7 +72,7 @@ export default function Login() {
             }
 
             const hashedPassword = await hashPassword(form.password);
-            const senhaCorreta = hashedPassword === user!.password;
+            const senhaCorreta = hashedPassword === user.password;
 
             if (!senhaCorreta) {
                 Alert.alert('Error', 'Invalid email or password');
@@ -84,7 +84,7 @@ export default function Login() {
 
 			await setAuthStatus(true)
 			router.replace('/(tabs)')
-        } catch (error: any) {
+        } catch (error) {
             console.error(error);
             Alert.alert('Error', error.message || 'An error occurred while logging in.');
         }

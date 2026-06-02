@@ -1,4 +1,3 @@
-// app/(auth)/_layout.tsx
 import { Slot, Redirect } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 
