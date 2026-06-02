@@ -3,74 +3,74 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Usuario() {
-  return (
-    <ScrollView style={styles.container}>
-		<SafeAreaView style={styles.container}>	
-			
-			<View style={styles.title}>
-				<Image source={require('@/assets/images/uninassau_logo.png')} style={styles.logo}/>
-						
-				<Text style={styles.Text1}>
-					USUÁRIO
-				</Text>
-			</View>
-
-			{/* Card do Usuário */}
-			<View style={styles.userCard}>
-				<MaterialIcons name="account-circle" size={56} color="white" />
-				<View style={styles.userInfo}>
-				<Text style={styles.userName}>USER 22009323</Text>
-				<Text style={styles.userRole}>Aluno</Text>
-				<Text style={styles.userCourse}>Ciências da Computação</Text>
+	return (
+		<ScrollView style={styles.container}>
+			<SafeAreaView style={styles.container}>	
+				
+				<View style={styles.title}>
+					<Image source={require('@/assets/images/uninassau_logo.png')} style={styles.logo}/>
+							
+					<Text style={styles.Text1}>
+						USUÁRIO
+					</Text>
 				</View>
-			</View>
 
-			{/* Seção Configurações */}
-			<View style={styles.section}>
-				<Text style={styles.sectionTitle}>Configurações</Text>
+				{/* Card do Usuário */}
+				<View style={styles.userCard}>
+					<MaterialIcons name="account-circle" size={56} color="white" />
+					<View style={styles.userInfo}>
+					<Text style={styles.userName}>USER 22009323</Text>
+					<Text style={styles.userRole}>Aluno</Text>
+					<Text style={styles.userCourse}>Ciências da Computação</Text>
+					</View>
+				</View>
 
-				<TouchableOpacity style={styles.menuItem}>
-				<View style={styles.iconWrapper}>
-					<MaterialIcons name="person" size={22} color="white" />
-					<MaterialIcons name="people" size={14} color="white" style={styles.iconBadge} />
-				</View>
-				<View style={styles.menuTextGroup}>
-					<Text style={styles.menuTitle}>Perfil</Text>
-					<Text style={styles.menuSubtitle}>Dados Pessoais</Text>
-				</View>
-				<MaterialIcons name="chevron-right" size={24} color="#09397d" />
-				</TouchableOpacity>
+				{/* Seção Configurações */}
+				<View style={styles.section}>
+					<Text style={styles.sectionTitle}>Configurações</Text>
 
-				<TouchableOpacity style={styles.menuItem}>
-				<MaterialCommunityIcons name="bell-badge-outline" size={26} color="#09397d" />
-				<View style={styles.menuTextGroup}>
-					<Text style={styles.menuTitle}>Notificações</Text>
-					<Text style={styles.menuSubtitle}>Dados Pessoais</Text>
-				</View>
-				<MaterialIcons name="chevron-right" size={24} color="#09397d" />
-				</TouchableOpacity>
+					<TouchableOpacity style={styles.menuItem}>
+						<View style={styles.iconWrapper}>
+							<MaterialIcons name="person" size={22} color="white" />
+							<MaterialIcons name="people" size={14} color="white" style={styles.iconBadge} />
+						</View>
+						<View style={styles.menuTextGroup}>
+							<Text style={styles.menuTitle}>Perfil</Text>
+							<Text style={styles.menuSubtitle}>Dados Pessoais</Text>
+						</View>
+						<MaterialIcons name="chevron-right" size={24} color="#09397d" />
+					</TouchableOpacity>
 
-				<TouchableOpacity style={styles.menuItem}>
-				<MaterialCommunityIcons name="lock-open-outline" size={26} color="#09397d" />
-				<View style={styles.menuTextGroup}>
-					<Text style={styles.menuTitle}>Segurança</Text>
-					<Text style={styles.menuSubtitle}>Senha e Privacidade</Text>
-				</View>
-				<MaterialIcons name="chevron-right" size={24} color="#09397d" />
-				</TouchableOpacity>
+					<TouchableOpacity style={styles.menuItem}>
+						<MaterialCommunityIcons name="bell-badge-outline" size={26} color="#09397d" />
+						<View style={styles.menuTextGroup}>
+							<Text style={styles.menuTitle}>Notificações</Text>
+							<Text style={styles.menuSubtitle}>Dados Pessoais</Text>
+						</View>
+						<MaterialIcons name="chevron-right" size={24} color="#09397d" />
+					</TouchableOpacity>
 
-				<TouchableOpacity style={styles.menuItem}>
-				<MaterialCommunityIcons name="exit-run" size={26} color="#09397d" />
-				<View style={styles.menuTextGroup}>
-					<Text style={styles.menuTitle}>Sair</Text>
-					<Text style={styles.menuSubtitle}>Encerrar Sessão</Text>
+					<TouchableOpacity style={styles.menuItem}>
+						<MaterialCommunityIcons name="lock-open-outline" size={26} color="#09397d" />
+						<View style={styles.menuTextGroup}>
+							<Text style={styles.menuTitle}>Segurança</Text>
+							<Text style={styles.menuSubtitle}>Senha e Privacidade</Text>
+						</View>
+						<MaterialIcons name="chevron-right" size={24} color="#09397d" />
+					</TouchableOpacity>
+
+					<TouchableOpacity style={styles.menuItem}>
+						<MaterialCommunityIcons name="exit-run" size={26} color="#09397d" />
+						<View style={styles.menuTextGroup}>
+							<Text style={styles.menuTitle}>Sair</Text>
+							<Text style={styles.menuSubtitle}>Encerrar Sessão</Text>
+						</View>
+						<MaterialIcons name="chevron-right" size={24} color="#09397d" />
+					</TouchableOpacity>
 				</View>
-				<MaterialIcons name="chevron-right" size={24} color="#09397d" />
-				</TouchableOpacity>
-			</View>
-		</SafeAreaView>
-	</ScrollView>
-  );
+			</SafeAreaView>
+		</ScrollView>
+	);
 }
 
 const styles = StyleSheet.create({
