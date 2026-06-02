@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 6,
     elevation: 4,
-	height: 400,
+	minHeight: 400,
   },
 
   sectionTitle: {
