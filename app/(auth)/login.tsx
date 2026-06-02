@@ -3,13 +3,9 @@ import { Text, TextInput, Button, StyleSheet, Alert, View, Pressable } from 'rea
 
 import { useSQLiteContext } from "expo-sqlite";
 import { useRouter } from "expo-router";
-
-import * as SecureStore from 'expo-secure-store';
 import * as Crypto from 'expo-crypto';
 
-async function setUserAuthStatus(value: boolean) {
-  await SecureStore.setItemAsync("is_user_logged", String(value));
-}
+import setAuthStatus from '@/utils/setAuthStatus'
 
 export default function Login() {
     const [form, setForm] = useState({
@@ -86,7 +82,7 @@ export default function Login() {
             Alert.alert('Success', 'User logged in successfully');
             setForm({ email: '', password: '' });
 
-			await setUserAuthStatus(true)
+			await setAuthStatus(true)
 			router.replace('/(tabs)')
         } catch (error: any) {
             console.error(error);
