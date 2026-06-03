@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Text, TextInput, StyleSheet, Alert, View, Pressable } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { useSQLiteContext } from "expo-sqlite";
-import { useRouter } from "expo-router";
 import * as Crypto from 'expo-crypto';
+import { useRouter } from "expo-router";
+import { useSQLiteContext } from "expo-sqlite";
 
-import setAuthStatus from '@/utils/setAuthStatus'
+import setAuthStatus from '@/utils/setAuthStatus';
 
 export default function Login() {
     const [form, setForm] = useState({
