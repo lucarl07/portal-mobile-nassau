@@ -1,11 +1,11 @@
-import * as SecureStore from 'expo-secure-store';
-import { Tabs, Redirect } from 'expo-router';
+import getAuthStatus from '@/utils/getAuthStatus';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Redirect, Tabs } from 'expo-router';
 
 export default function TabsLayout() {
-  const isAuthenticated = SecureStore.getItem("is_user_logged");
+  const isAuthenticated = getAuthStatus()
 
-  if (isAuthenticated != "true") return <Redirect href="/login" />;
+  if (isAuthenticated !== true) return <Redirect href="/login" />;
 
   return (
 	<Tabs

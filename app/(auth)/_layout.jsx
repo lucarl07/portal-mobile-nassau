@@ -1,11 +1,11 @@
-import { Slot, Redirect } from 'expo-router';
-import * as SecureStore from 'expo-secure-store';
+import getAuthStatus from '@/utils/getAuthStatus';
+import { Redirect, Slot } from 'expo-router';
 
 export default function AuthLayout() {
-  const isAuthenticated = SecureStore.getItem("is_user_logged");
+  const isAuthenticated = getAuthStatus();
 
   // Se já estiver logado, redireciona para a área principal
-  if (isAuthenticated == "true") return <Redirect href="/(tabs)" />;
+  if (isAuthenticated === true) return <Redirect href="/(tabs)" />;
 
   return <Slot />;
 }
